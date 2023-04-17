@@ -7,7 +7,9 @@ import retrofit2.converter.gson.GsonConverterFactory;
 
 public class ApiClient {
 
-    private static final String BASE_URL = "http://192.168.0.112:5000/user/";
+    private static final String BASE_URL = "http://192.168.0.21:5000/user/";
+
+
 
     private static Retrofit getRetrofit() {
 
@@ -17,6 +19,9 @@ public class ApiClient {
         OkHttpClient okHttpClient = new OkHttpClient.Builder()
                 .addInterceptor(httpLoggingInterceptor).build();
 
+
+
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl(BASE_URL)
                 .addConverterFactory(GsonConverterFactory.create())
@@ -25,6 +30,8 @@ public class ApiClient {
 
         return retrofit;
     }
+
+
 
     public static UserService getUserService() {
         UserService userService = getRetrofit().create(UserService.class);
