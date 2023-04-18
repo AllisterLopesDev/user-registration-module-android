@@ -1,6 +1,6 @@
 package com.example.sts_registration_test;
 
-public class UserRequest {
+public class OtpRequest {
 
     /*
     * "email":"",
